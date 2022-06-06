@@ -121,9 +121,9 @@ resource "aws_ecs_task_definition" "this" {
   tags                     = var.tags
   task_role_arn            = try(aws_iam_role.ecs_task[0].arn, var.ecs_task_role)
 
-  lifecycle {
-    ignore_changes = [container_definitions]
-  }
+#   lifecycle {
+#     ignore_changes = [container_definitions]
+#   }
 }
 
 resource "aws_ecs_service" "this" {
