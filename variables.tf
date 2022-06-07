@@ -146,6 +146,12 @@ variable "task_cpu" {
   type        = number
 }
 
+variable "credentials_parameter" {
+  default     = ""
+  description = "The ARN of the secret containing the private repository credentials"
+  type        = string
+}
+
 variable "task_desired_count" {
   default     = 1
   description = "Number of copies of task definition that should be running at any given time"
