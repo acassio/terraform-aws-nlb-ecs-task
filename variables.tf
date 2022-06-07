@@ -146,10 +146,10 @@ variable "task_cpu" {
   type        = number
 }
 
-variable "credentials_parameter" {
-  default     = ""
+variable "repository_credentials" {
+  default     = null
   description = "The ARN of the secret containing the private repository credentials"
-  type        = string
+  type        = map(string)
 }
 
 variable "task_desired_count" {

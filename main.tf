@@ -108,12 +108,12 @@ module "container_definition" {
   log_configuration = local.log_configuration
   port_mappings     = local.port_mappings
   secrets           = var.secrets
+  repository_credentials = var.repository_credentials
 }
 
 resource "aws_ecs_task_definition" "this" {
   container_definitions    = module.container_definition.json_map_encoded_list
   cpu                      = var.task_cpu
-  credentials_parameter    = var.credentials_parameter
 #   execution_role_arn       = try(aws_iam_role.ecs_exec[0].arn, var.ecs_execution_role)
   family                   = var.name
   memory                   = var.task_memory
