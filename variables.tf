@@ -52,6 +52,7 @@ variable "environment_variables" {
 
 variable "health_check" {
   default = {
+    path                = "/health"
     port                = "traffic-port"
     protocol            = "HTTP"
     healthy_threshold   = 3
@@ -60,6 +61,7 @@ variable "health_check" {
   }
   description = "Target group health check, for LB to assess service health"
   type = object({
+    path                = string
     port                = string
     protocol            = string
     healthy_threshold   = number

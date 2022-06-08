@@ -61,6 +61,7 @@ resource "aws_lb_target_group" "this" {
   vpc_id      = var.vpc_id
 
   health_check {
+    path                = var.health_check.path
     healthy_threshold   = var.health_check.healthy_threshold
     interval            = var.health_check.interval
     port                = var.health_check.port
